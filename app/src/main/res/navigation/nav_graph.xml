@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/startFragment">
+    <!-- TODO 7: APP:STARTDESTINATION indica que fragmento sera el punto de partida -->
+
+
+    <!-- TODO 2: Agregando Archivo Navigation -->
+    <!-- Agrego este archivo Navigation el cual manejara toda la interaccion de mi app -->
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.tse.firstjectpackapp.ui.start.StartFragment"
+        android:label="start_fragment"
+        tools:layout="@layout/start_fragment" >
+
+        <!-- TODO 3: Agregando una Accion -->
+        <!-- Agrego una accion al fragmento principal para indicar la accion de navegacion que se seguira, claro esta accion la invocare desde un buton -->
+
+        <!-- TODO 4: Agregando animacion de transicion a la accion -->
+        <!-- A la accion que acabo de agregar tambien se le puede agregar animaciones para que la transicion entre un fragment y otro sea visualmente mejor-->
+        <action
+            android:id="@+id/action_to_nextFragment"
+            app:destination="@id/nextFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+
+    <!-- TODO 5: Agregando un fragment extra para demostrar el uso de la accion -->
+    <!-- En la accion del fragment principal se hace la referencia a este fragment de destino -->
+    <fragment
+        android:id="@+id/nextFragment"
+        android:name="com.example.tse.firstjectpackapp.NextFragment"
+        android:label="next_fragment"
+        tools:layout="@layout/next_fragment" />
+
+</navigation>
